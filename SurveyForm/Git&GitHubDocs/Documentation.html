@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Documentation.css" />
+    <title>Git & GitHub Guide</title>
+  </head>
+  <body>
+    <div class="content">
+      <nav id="navbar">
+        <header><h1>Git & GitHub</h1></header>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Why_Use_Git?">Why Use Git?</a>
+        <a class="nav-link" href="#Understanding_Git_Terminology"
+          >Understanding Git Terminology</a
+        >
+        <a class="nav-link" href="#Cloning_a_Repository"
+          >Cloning a Repository</a
+        >
+        <a class="nav-link" href="#Branching_and_Merging"
+          >Branching and Merging</a
+        >
+        <a class="nav-link" href="#Undoing_Mistakes">Undoing Mistakes</a>
+        <a class="nav-link" href="#.gitignore_Explained"
+          >.gitignore Explained</a
+        >
+        <a class="nav-link" href="#Collaborating_with_Others"
+          >Collaborating with Others</a
+        >
+        <a class="nav-link" href="#SSH_vs_HTTPS_in_GitHub"
+          >SSH vs HTTPS in GitHub</a
+        >
+        <a class="nav-link" href="#Commit_Message_Best_Practices"
+          >Commit Message Best Practices</a
+        >
+        <a class="nav-link" href="#License_and_README">License and README</a>
+        <a class="nav-link" href="#Conclusion">Conclusion</a>
+        <a class="nav-link" href="#References">References</a>
+      </nav>
+      <main id="main-doc">
+        <section class="main-section" id="Introduction">
+          <header><h2>Introduction</h2></header>
+          <p>
+            Whether you're a budding developer or just starting your coding
+            journey, version control is an essential skill to master - and Git
+            is the most widely used tool for it. Combined with GitHub, it
+            becomes incredibly easy to track code changes, collaborate with
+            others, and manage your projects effectively.
+          </p>
+          <p>
+            This guide walks you through the fundamentals of Git and GitHub,
+            from installation to pushing your first repository. By the end,
+            you'll be confident enough to version control your own projects and
+            contribute to others.
+          </p>
+        </section>
+        <section class="main-section" id="Why_Use_Git?">
+          <header><h2>Why Use Git?</h2></header>
+          <p>Git allows developers to:</p>
+          <ul>
+            <li>Track changes in code over time.</li>
+            <li>Collaborate without overwriting each other's work.</li>
+            <li>
+              Experiment using branches without breaking the main project.
+            </li>
+            <li>Revert to a previous version when things go wrong.</li>
+          </ul>
+          <p>Using Git is an essential skill in any development workflow.</p>
+        </section>
+        <section class="main-section" id="Understanding_Git_Terminology">
+          <header><h2>Understanding Git Terminology</h2></header>
+          <ul>
+            <li><b>Repository (repo):</b> A directory that Git tracks.</li>
+            <li>
+              <b>Commit:</b> A snapshot of your project at a point in time.
+            </li>
+            <li>
+              <b>Staging Area:</b> Where you prepare changes before committing.
+            </li>
+            <li><b>Branch:</b> A separate line of development.</li>
+            <li><b>Merge:</b> Combine changes from one branch into another.</li>
+            <li><b>Clone:</b> Make a local copy of a GitHub repository.</li>
+            <li>
+              <b>Push/Pull:</b> Send to or fetch from a remote repository like
+              GitHub.
+            </li>
+          </ul>
+        </section>
+        <section class="main-section" id="Cloning_a_Repository">
+          <header><h2>Cloning a Repository</h2></header>
+          <p>To get a local copy of a GitHub project:</p>
+          <div class="code-terminal">
+            <p id="terminal">bash</p>
+            <div class="code">
+              <code>git clone https://github.com/username/repo-name.git</code>
+            </div>
+          </div>
+          <p>This creates a local folder with the code and Git history.</p>
+        </section>
+        <section class="main-section" id="Branching_and_Merging">
+          <header><h2>Branching and Merging</h2></header>
+          <p>Create a new branch:</p>
+          <div class="code-terminal">
+            <p id="terminal">bash</p>
+            <div class="code">
+              <code>git checkout -b feature-branch</code>
+            </div>
+          </div>
+          <p>Make changes and commit as usual.</p>
+          <p>Then switch back and merge:</p>
+          <div class="code-terminal">
+            <p id="terminal">bash</p>
+            <div class="code">
+              <code>git checkout main</code>
+              <code>git merge feature-branch</code>
+            </div>
+          </div>
+          <p>
+            Use this to develop features without affecting the main codebase.
+          </p>
+        </section>
+        <section class="main-section" id="Undoing_Mistakes">
+          <header><h2>Undoing Mistakes</h2></header>
+          <p>Accidentally committed too early? You can undo:</p>
+          <ul>
+            <li>
+              <b>Unstage a file:</b>
+              <div class="code-terminal">
+                <p id="terminal">bash</p>
+                <div class="code">
+                  <code>git reset filename</code>
+                </div>
+              </div>
+            </li>
+            <li>
+              <b>Undo last commit (keep changes):</b>
+              <div class="code-terminal">
+                <p id="terminal">bash</p>
+                <div class="code">
+                  <code>git reset --soft HEAD~1</code>
+                </div>
+              </div>
+            </li>
+            <li>
+              <b>Discard changes in a file:</b>
+              <div class="code-terminal">
+                <p id="terminal">bash</p>
+                <div class="code">
+                  <code>git checkout -- filename</code>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <p>Be careful with these commands — they can lose work if misused.</p>
+        </section>
+        <section class="main-section" id=".gitignore_Explained">
+          <header><h2>.gitignore Explained</h2></header>
+          <p>
+            Use a .gitignore file to prevent tracking certain files. Example:
+          </p>
+          <div class="code-terminal">
+            <p id="terminal">bash</p>
+            <div class="code">
+              <code>node_modules/</code>
+              <code>.env</code>
+              <code>.DS_Store</code>
+              <code>*.log</code>
+            </div>
+          </div>
+          <p>This helps keep your repository clean and secure.</p>
+        </section>
+        <section class="main-section" id="Collaborating_with_Others">
+          <header><h2>Collaborating with Others</h2></header>
+          <ol>
+            <li>Clone the repo</li>
+            <li>Create a new branch</li>
+            <li>Make changes and commit</li>
+            <li>
+              Push your branch:
+              <div class="code-terminal">
+                <p id="terminal">bash</p>
+                <div class="code">
+                  <code>git push origin branch-name</code>
+                </div>
+              </div>
+            </li>
+            <li>
+              Create a Pull Request (PR) on GitHub to propose your changes
+            </li>
+          </ol>
+          <p>
+            GitHub lets reviewers comment, approve, or request changes before
+            merging.
+          </p>
+        </section>
+        <section class="main-section" id="SSH_vs_HTTPS_in_GitHub">
+          <header><h2>SSH vs HTTPS in GitHub</h2></header>
+          <p>You can connect GitHub with either:</p>
+          <ul>
+            <li>
+              <b>HTTPS</b> - default method; prompts for credentials each time
+            </li>
+            <li>
+              <b>SSH</b> - secure and preferred for frequent use
+              <p>Set up SSH once:</p>
+              <div class="code-terminal">
+                <p id="terminal">bash</p>
+                <div class="code">
+                  <code>ssh-keygen -t ed25519 -C "your@email.com"</code>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <p>Then add the key to your GitHub account.</p>
+        </section>
+        <section class="main-section" id="Commit_Message_Best_Practices">
+          <header><h2>Commit Message Best Practices</h2></header>
+          <p>Write clear and concise messages:</p>
+          <ul>
+            <li>Good: Add login feature with JWT auth</li>
+            <li>Bad: stuff, changes, final</li>
+          </ul>
+          <p>Conventional Commit style (optional but helpful):</p>
+          <div class="code-terminal">
+            <p id="terminal">makefile</p>
+            <div class="code">
+              <code>feat: add user registration</code>
+              <code>fix: correct spelling in README</code>
+              <code>docs: update contributing guide</code>
+            </div>
+          </div>
+        </section>
+        <section class="main-section" id="License_and_README">
+          <header><h2>License and README</h2></header>
+          <p>Include a README.md file with:</p>
+          <ul>
+            <li>Project description</li>
+            <li>Setup instructions</li>
+            <li>Usage</li>
+            <li>Credits</li>
+            <li>License (e.g., MIT, GPL)</li>
+          </ul>
+          <p>This helps others understand and contribute to your work.</p>
+        </section>
+        <section class="main-section" id="Conclusion">
+          <header><h2>Conclusion</h2></header>
+          <p>
+            Git and GitHub are at the heart of modern software development.
+            Knowing how to use them gives you the power to manage code
+            efficiently, collaborate seamlessly, and maintain a clean history of
+            your project's evolution.
+          </p>
+          <p>
+            This is just the beginning - explore more advanced topics like
+            branching strategies, rebasing, Git workflows (like Git Flow), and
+            CI/CD integration as you grow. But for now, you've taken the most
+            important step: you've started.
+          </p>
+          <p>Keep committing. Keep collaborating. Happy coding!</p>
+        </section>
+        <section class="main-section" id="References">
+          <header><h2>References</h2></header>
+          <p>
+            Here are some useful links to help you dive deeper into Git and
+            GitHub:
+          </p>
+          <ul>
+            <li>
+              <p>Official Git Documentation</p>
+              <a href="https://git-scm.com/doc" target="_blank"
+                >https://git-scm.com/doc</a
+              >
+              <p>Complete guide to Git commands, internals, and concepts.</p>
+            </li>
+            <li>
+              <p>GitHub Docs</p>
+              <a href="https://docs.github.com/" target="_blank"
+                >https://docs.github.com/</a
+              >
+              <p>
+                Everything you need to know about using GitHub, from
+                repositories to pull requests.
+              </p>
+            </li>
+            <li>
+              <p>Pro Git Book (Free)</p>
+              <a href="https://git-scm.com/book/en/v2" target="_blank"
+                >https://git-scm.com/book/en/v2</a
+              >
+              <p>
+                A detailed book covering Git basics and advanced usage,
+                available online for free.
+              </p>
+            </li>
+            <li>
+              <p>GitHub Learning Lab</p>
+              <a href="https://lab.github.com/" target="_blank"
+                >https://lab.github.com/</a
+              >
+              <p>
+                Interactive tutorials and hands-on courses on GitHub workflows.
+              </p>
+            </li>
+            <li>
+              <p>Git Cheatsheet (PDF)</p>
+              <a
+                href="https://education.github.com/git-cheat-sheet-education.pdf"
+                target="_blank"
+                >https://education.github.com/git-cheat-sheet-education.pdf</a
+              >
+              <p>Handy one-page reference for commonly used Git commands.</p>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <p>&copy; 2025 Git & GitHub Guide. Built for learning purposes.</p>
+    </footer>
+  </body>
+</html>
