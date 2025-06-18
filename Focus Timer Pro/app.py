@@ -70,14 +70,16 @@ def apply_custom_css():
     }}
     
     .stats-card {{
-        background: {theme['background']};
-        padding: 1rem;
-        border-radius: 10px;
-        margin: 0.5rem 0;
-        border-left: 4px solid {theme['primary']};
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        word-wrap: break-word;
-    }}
+    background: {theme['background']};
+    color: {theme['text']};
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0.5rem 0;
+    border-left: 4px solid {theme['primary']};
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    word-wrap: break-word;
+}}
+
     
     .control-button {{
         margin: 0.25rem;
