@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="surveyForm.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <title>Survey Form</title>
+  </head>
+  <body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">
+      This form is designed to collect a few simple details about your
+      experiences, interests, and opinions. It's a short and straightforward
+      survey that helps us understand you better. Feel free to take your time
+      and select the options that best reflect you!
+    </p>
+    <form id="survey-form">
+      <fieldset>
+        <legend>Personal Details</legend>
+        <label for="name" id="name-label"
+          >Name:
+          <input type="text" id="name" name="name" placeholder="name" required
+        /></label>
+        <label for="email" id="email-label"
+          >Email:
+          <input
+            type="email"
+            id="email"
+            placeholder="mail ID"
+            name="email"
+            required
+        /></label>
+        <label for="number" id="number-label"
+          >Age:
+          <input
+            type="number"
+            id="number"
+            name="number"
+            placeholder="18-100"
+            min="18"
+            max="100"
+        /></label>
+        <label class="gender">Gender: </label>
+        <label class="gender" for="male"
+          ><input type="radio" value="male" name="gender" id="male" />
+          Male</label
+        >
+        <label for="female" class="gender"
+          ><input type="radio" value="female" name="gender" id="female" />
+          Female</label
+        >
+        <label for="other" class="gender"
+          ><input type="radio" value="other" name="gender" id="other" />
+          Other</label
+        >
+      </fieldset>
+      <fieldset>
+        <legend>Select your highest qualification</legend>
+        <select id="dropdown">
+          <option value="select">select</option>
+          <option value="High School">High School</option>
+          <option value="Bachelor's Degree">Bachelor's Degree</option>
+          <option value="Master's Degree">Master's Degree</option>
+          <option value="PhD">PhD</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Do you own a pet?</legend>
+        <label for="yes" class="pet"
+          ><input type="radio" id="yes" value="yes" name="pet" /> Yes</label
+        >
+        <label for="no" class="pet"
+          ><input type="radio" value="no" id="no" name="pet" /> No</label
+        >
+      </fieldset>
+      <fieldset>
+        <legend>What programming languages do you know?</legend>
+        <label for="Python"
+          ><input type="checkbox" value="Python" id="Python" /> Python</label
+        >
+        <label for="Java"
+          ><input type="checkbox" value="Java" id="Java" /> Java</label
+        >
+        <label for="C++"
+          ><input type="checkbox" value="C++" id="C++" /> C++</label
+        >
+        <label for="Javascript"
+          ><input type="checkbox" value="Javascript" id="Javascript" />
+          Javascript</label
+        >
+        <label for="HTML/CSS"
+          ><input type="checkbox" value="HTML/CSS" id="HTML/CSS" />
+          HTML/CSS</label
+        >
+      </fieldset>
+      <fieldset>
+        <legend>Which tech areas interest you the most?</legend>
+        <label for="WebDevelopment"
+          ><input id="WebDevelopment" type="checkbox" value="WebDevelopment" />
+          Web Development</label
+        >
+        <label for="DataScience"
+          ><input id="DataScience" type="checkbox" value="DataScience" /> Data
+          Science</label
+        >
+        <label for="GameDevelopment"
+          ><input
+            id="GameDevelopment"
+            type="checkbox"
+            value="GameDevelopment"
+          />
+          Game Development</label
+        >
+        <label for="Cybersecurity"
+          ><input id="Cybersecurity" type="checkbox" value="Cybersecurity" />
+          Cybersecurity</label
+        >
+        <label for="DevOps"
+          ><input id="DevOps" type="checkbox" value="DevOps" /> DevOps</label
+        >
+      </fieldset>
+      <label for="feedback">
+        Feedback:
+        <textarea
+          id="feedback"
+          placeholder="leave your valuable feedback"
+          rows="3"
+          cols="30"
+        ></textarea>
+      </label>
+      <input type="submit" id="submit" />
+    </form>
+  </body>
+</html>
